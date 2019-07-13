@@ -6,7 +6,7 @@
 int main()
 {
     {
-        pong::Display display(640, 480, 16);
+        pong::Display display(960, 720, 16);
         while (display.Cycle()) {}
     }
 }

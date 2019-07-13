@@ -3,7 +3,8 @@ CFLAGS = -std=c++11
 HEADERS = pong-client/*.hpp
 
 CLIENTSRCDIR = pong-client
-CLIENTSRC = $(CLIENTSRCDIR)/main.cpp $(CLIENTSRCDIR)/display.cpp
+CLIENTSRC = $(CLIENTSRCDIR)/main.cpp $(CLIENTSRCDIR)/display.cpp \
+			$(CLIENTSRCDIR)/game.cpp $(CLIENTSRCDIR)/draw.cpp
 CLIENTOBJ = $(CLIENTSRC:.cpp=.o)
 CLIENTLIB = -lSDL2
 

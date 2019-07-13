@@ -22,13 +22,20 @@ Display::Display(int w, int h, int m) : width(w), height(h), mspertick(m)
     SDL_CreateWindowAndRenderer(width, height, 0, &window, &renderer);
     SDL_SetWindowTitle(window, "Poor Man's Table Tennis: The Video Game");
     SDL_RenderSetLogicalSize(renderer, rwidth, rheight);
+
+    game = new Game(renderer, window);
 }
 
 bool Display::Cycle()
 {
     Uint32 start = SDL_GetTicks();
 
-    // TODO: Add logic here
+    game->Logic();
+
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    SDL_RenderClear(renderer);
+    game->Draw();
+    SDL_RenderPresent(renderer);
 
     SDL_Event e;
 
