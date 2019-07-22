@@ -30,6 +30,8 @@ void Game::Draw()
     int y = (int) (50 * sinf( (SDL_GetTicks() % 720) * (M_PI / 360) ));
 
     DrawBall({200 + x, 200 + y});
+
+    DrawNumber(renderer, {250, 200}, SDL_GetTicks() / 1000);
 }
 
 void Game::DrawPaddle(SDL_Point pos)
